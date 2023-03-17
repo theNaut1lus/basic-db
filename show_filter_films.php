@@ -21,14 +21,14 @@ $sql = "select * from film where (year>=$made_after and year <= $made_before)";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-      echo $row["id"] . " : " . $row["name"] . " : " . $row["year"] . " : " . $row["duration"] . "<br>";
-    }
-  } else {
-    echo "0 results";
+  // output data of each row
+  while ($row = $result->fetch_assoc()) {
+    echo $row["id"] . " : " . $row["name"] . " : " . $row["year"] . " : " . $row["duration"] . "<br>";
   }
-  $conn->close();
+} else {
+  echo "0 results";
+}
+$conn->close();
 
 
 ?>
